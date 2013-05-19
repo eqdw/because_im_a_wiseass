@@ -19,6 +19,6 @@ get '/' do
       words[1]
     else
       i
-    end
-  end.join(delimiter)
+    end                 # we should end with a \n if the destination is console
+  end.join(delimiter) + (delimiter == "\n" ? "\n" : "")
 end
